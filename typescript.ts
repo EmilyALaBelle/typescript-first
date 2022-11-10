@@ -9,7 +9,7 @@ let fruits: string[] = [
     "bananas"
 ]
 
-console.log(`
+debug(`
 First Name: ${firstName}
 Your Age: ${age}
 you have many ${fruits}
@@ -22,7 +22,7 @@ enum taxForm {
     CCorp = "1120",
 }
 
-console.log(`
+debug(`
 You need form ${taxForm.childCredit}
 `)
 
@@ -35,4 +35,13 @@ function getFruit(index: number): string{
 return fruits[index]
 }
 
-console.log(`You chose an ${getFruit(0)}`)
+debug(`You chose an ${getFruit(0)}`)
+
+function debug(message: any): void{
+    console.log((new Date()) + (message))
+    //no return
+}
+
+debug('No return')
+
+debug(222)
